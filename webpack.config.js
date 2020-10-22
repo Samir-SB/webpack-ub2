@@ -89,11 +89,10 @@ module.exports = {
       template_filename: ['index.html']
     }),
 
-    // new HtmlWebpackPartialsPlugin({
-    //   path: path.join(__dirname, 'src/partials/image.html'),
-    //   // location: 'navigation',
-    //   template_filename: ['index.html']
-    // }),
+    new HtmlWebpackPartialsPlugin({
+      path: path.join(__dirname, 'src/partials/home/news.html'),
+      template_filename: ['index.html']
+    }),
 
     new MiniCssExtractPlugin({
       filename: "bundle.css"
