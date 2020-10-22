@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 
 module.exports = {
   entry: './src/javascript/index.js',
@@ -21,6 +22,17 @@ module.exports = {
           }
         }
       },
+
+      {
+        test: /\.(png|jpe?g|gif|svg)$/,
+        use: [{
+          loader: "file-loader",
+          options: {
+            outputPath: 'images',
+            name: '[name].[ext]',
+          }
+        }]
+      },
       {
         test: /\.(sa|sc|c)ss$/,
         use: [{
@@ -40,31 +52,27 @@ module.exports = {
           }
         ]
       },
-      {
-        test: /\.(png|jpe?g|gif|svg)$/,
-        use: [{
-          loader: "file-loader",
-          options: {
-            outputPath: 'images'
-          }
-        }]
-      },
+
       {
         test: /\.(woff|woff2|ttf|otf|eot)$/,
         use: [{
           loader: "file-loader",
           options: {
-            outputPath: 'fonts'
+            outputPath: 'fonts',
+            //name: '[path][name].[ext]'
           }
         }]
       },
       {
         test: /\.(html)$/,
-        include: path.join(__dirname, 'src'),
-        use: {
+        exclude: /(partials)/,
+        use: [{
           loader: 'html-loader',
-        }
-      }
+          options: {
+            //minimize: true
+          },
+        }],
+      },
     ]
   },
 
@@ -72,6 +80,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.html')
     }),
+    new HtmlWebpackPartialsPlugin({
+      path: path.join(__dirname, 'src/partials/image.html'),
+      // location: 'navigation',
+      template_filename: ['index.html']
+    }),
+
     new MiniCssExtractPlugin({
       filename: "bundle.css"
     })
