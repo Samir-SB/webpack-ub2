@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 
 module.exports = {
-  entry: './src/javascript/index.js',
+  entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -64,6 +64,10 @@ module.exports = {
         }]
       },
       {
+        test: /\.mp4$/,
+        use: 'file-loader?name=videos/[name].[ext]',
+      },
+      {
         test: /\.(html)$/,
         exclude: /(partials)/,
         use: [{
@@ -81,10 +85,15 @@ module.exports = {
       template: path.resolve(__dirname, 'src/index.html')
     }),
     new HtmlWebpackPartialsPlugin({
-      path: path.join(__dirname, 'src/partials/image.html'),
-      // location: 'navigation',
+      path: path.join(__dirname, 'src/partials/home/banner.html'),
       template_filename: ['index.html']
     }),
+
+    // new HtmlWebpackPartialsPlugin({
+    //   path: path.join(__dirname, 'src/partials/image.html'),
+    //   // location: 'navigation',
+    //   template_filename: ['index.html']
+    // }),
 
     new MiniCssExtractPlugin({
       filename: "bundle.css"
