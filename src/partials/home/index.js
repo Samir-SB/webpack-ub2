@@ -1,4 +1,4 @@
-import './sass/banner.css';
+import './sass/banner.scss';
 import './sass/news.scss';
 import './sass/events.scss';
 

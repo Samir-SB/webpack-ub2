@@ -19,4 +19,4 @@ const swiper = new Swiper('.swiper-container', {
   },
 });
 
-console.log('swiper');
+console.log(swiper);

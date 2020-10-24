@@ -2,7 +2,9 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
-
+const {
+  CleanWebpackPlugin
+} = require('clean-webpack-plugin');
 module.exports = {
   entry: './src/main.js',
   output: {
@@ -22,7 +24,10 @@ module.exports = {
           }
         }
       },
-
+      {
+        //test: /\.svg$/,
+        // use: 'svg-inline-loader'
+      },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
         use: [{
@@ -81,9 +86,6 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/index.html')
-    }),
     new HtmlWebpackPartialsPlugin({
       path: path.join(__dirname, 'src/partials/home/banner.html'),
       template_filename: ['index.html']
@@ -101,6 +103,11 @@ module.exports = {
 
     new MiniCssExtractPlugin({
       filename: "bundle.css"
-    })
+    }),
+
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/index.html')
+    }),
+    new CleanWebpackPlugin(),
   ]
 };

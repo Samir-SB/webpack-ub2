@@ -48,11 +48,31 @@ a {
 
 p {
   color: #333333;
-  color: #a5a5a5;
+  color: #8b8b8b;
   font-size: 1rem;
   line-height: 1.8;
   margin-bottom: 1em;
   font-weight: 400;
+}
+
+section {
+  display: block;
+  width: 100%;
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
 }
 
 .d-flex {
@@ -68,6 +88,8 @@ p {
 .center {
   justify-content: center;
   align-items: center;
+  display: flex;
+
 }
 
 .justify-content-center {
