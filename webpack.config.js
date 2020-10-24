@@ -86,6 +86,12 @@ module.exports = {
   },
 
   plugins: [
+
+    new HtmlWebpackPartialsPlugin({
+      path: path.join(__dirname, 'src/partials/home/navigation.html'),
+      template_filename: ['index.html']
+    }),
+
     new HtmlWebpackPartialsPlugin({
       path: path.join(__dirname, 'src/partials/home/banner.html'),
       template_filename: ['index.html']
