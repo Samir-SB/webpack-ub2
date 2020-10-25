@@ -4,19 +4,11 @@
   display: flex;
   padding: 50px;
 
-
-  .static-part {
-    padding-top: 30px;
-    height: 467px;
-    margin-right: 3rem;
-    flex: 2;
-    display: flex;
-    flex-direction: row;
-
+  .left-side {
+    width: 400px;
   }
 
   h6 {
-
     display: inline-block;
     margin: 5px 5px 5px 0;
     color: var(--secondary-color);
@@ -53,7 +45,6 @@
 
   i.icon-plus {
     margin-right: 5px;
-
   }
 
   i.icon-plus::after {
@@ -64,7 +55,6 @@
   .swiper-container {
     height: 500px;
     position: relative;
-
   }
 
   .swiper-container .swiper-pagination {
@@ -80,7 +70,6 @@
     display: flex;
     padding: 1rem;
     overflow: hidden;
-
   }
 
   .slide-wrapper .card {
@@ -107,15 +96,14 @@
     top: 0;
     left: 2rem;
     transform: translateY(-50%);
-    -webkit-box-shadow: 0 5px 20px 0 rgba(252, 142, 68, .4);
-    box-shadow: 0 5px 20px 0 rgba(252, 142, 68, .4);
+    -webkit-box-shadow: 0 5px 20px 0 rgba(252, 142, 68, 0.4);
+    box-shadow: 0 5px 20px 0 rgba(252, 142, 68, 0.4);
   }
 
   .card .circle p {
     padding: 0;
     color: #fff;
     font-size: 1.5rem;
-
   }
 
   .card .circle span {
@@ -139,7 +127,7 @@
     color: var(--gray-color);
   }
 
-  .card>div {
+  .card > div {
     display: flex;
     flex-direction: column;
   }
@@ -150,7 +138,6 @@
     /* align-items: center; */
     margin-bottom: 2rem;
   }
-
 
   .card .date-wrapper i,
   .card .address-wrapper i {
@@ -189,7 +176,7 @@
     left: 50%;
     transform: translate(-50%);
     white-space: nowrap;
-    transition: all .4s ease-in-out;
+    transition: all 0.4s ease-in-out;
   }
 
   .btn:hover {

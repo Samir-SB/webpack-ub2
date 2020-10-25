@@ -22,7 +22,15 @@
   }
 
   .btn {
-    color: salmon;
+    color: #a00a33;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 3px solid transparent;
+
+    &:hover {
+      border: 3px solid darken($color: #a00a33, $amount: 10%);
+    }
   }
 }
 
