@@ -1,51 +1,52 @@
 .hero-banner {
-  background-color: #ebecf0;
+  padding-top: 0px;
   position: relative;
+  height: 85vh;
 
-  video {
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
     width: 100%;
+    background-color: rgba(53, 49, 49, 0.575);
+    z-index: -1;
+  }
+  video {
+    position: absolute;
+    width: 100%;
+    z-index: -2;
     // object-fit: contain;
     // object-position: center;
   }
 
-
-  // slider ==================================
-  // #slider {
-  //   display: flex;
-  //   background-color: green;
-  // }
-
+  .btn {
+    color: salmon;
+  }
 }
 
-
 .slide-container {
-  background-color: red;
   width: 600px;
-  height: 250px;
-  position: absolute;
-  left: 14%;
-  top: 57%;
-  transform: translateY(-50%);
+
+  margin-left: 20%;
+  margin-top: 15%;
   overflow: hidden;
 }
 
 #slider {
   display: inline-flex;
   transition: 0.5s;
-
 }
 
 .slide-content {
   width: 600px;
-  height: 250px;
-  background-color: green;
-  overflow: hidden;
-
 }
 
 .slide-content h1 {
   color: #fff;
-  font-size: 80px;
+  font-size: 45px;
+  line-height: 1.5;
   font-weight: 100;
   margin: 10px 0;
 }
@@ -85,7 +86,7 @@
   height: 80px;
   width: 10px;
   cursor: pointer;
-  transform: translateX(-50%)
+  transform: translateX(-50%);
 }
 
 #active {
@@ -96,6 +97,4 @@
   position: absolute;
   top: 0;
   transform: translateX(-50%);
-
-
 }

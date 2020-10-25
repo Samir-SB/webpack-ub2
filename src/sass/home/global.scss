@@ -3,8 +3,10 @@
   --bg-lightgrey: #f7f7f7;
   --clr-golden: #b7924b;
   --bg-brown-darken: #453d48;
-  --margin-space: 1rem;
+  --margin-space: 2rem;
 }
+
+//$margin-space: 2rem;
 
 #top {
   height: 100vh;
@@ -56,7 +58,7 @@
 }
 
 .col-4 {
-  width: calc(33.33% - var(--margin-space));
+  width: calc(50.33% - var(--margin-space));
 }
 
 .col-3 {

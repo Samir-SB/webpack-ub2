@@ -5,10 +5,11 @@
   src: url('../fonts/OpenSans-Regular.ttf');
 }
 
-body {}
+body {
+}
 
 :root {
-  --margin-space: 1rem;
+  --margin-space: 2rem;
   --color-primary: salmon;
 }
 
@@ -20,12 +21,10 @@ body {}
   box-sizing: border-box;
 }
 
-
 body {
   min-height: 100vh;
   font-size: 14px;
-  font-family: 'Poppins',
-    'OpenSans', sans-serif;
+  font-family: 'Poppins', 'OpenSans', sans-serif;
 }
 
 h1,
@@ -89,7 +88,6 @@ section {
   justify-content: center;
   align-items: center;
   display: flex;
-
 }
 
 .justify-content-center {
