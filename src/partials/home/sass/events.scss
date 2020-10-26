@@ -1,8 +1,8 @@
 #events {
-  height: 100vh;
+  //height: 100vh;
   background-color: #ebecf0;
   display: flex;
-  padding: 50px;
+  padding: 60px 1rem;
 
   .left-side {
     display: flex;
@@ -40,7 +40,6 @@
   .events-wrapper {
     display: flex;
     align-items: center;
-    border: 2px solid green;
   }
   .swiper-wrapper {
     display: flex;

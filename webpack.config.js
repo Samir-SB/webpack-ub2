@@ -1,28 +1,27 @@
 const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
-const {
-  CleanWebpackPlugin
-} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   mode: 'development',
 
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.js$/,
         exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
       {
         //test: /\.svg$/,
@@ -30,43 +29,48 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
-        use: [{
-          loader: "file-loader",
-          options: {
-            outputPath: 'images',
-            name: '[name].[ext]',
-          }
-        }]
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'images',
+              name: '[name].[ext]',
+            },
+          },
+        ],
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [{
-            loader: MiniCssExtractPlugin.loader
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
           },
           {
-            loader: "postcss-loader"
+            loader: 'postcss-loader',
           },
           {
-            loader: "sass-loader",
+            loader: 'sass-loader',
             options: {
-              implementation: require("sass")
-            }
-          }
-        ]
+              implementation: require('sass'),
+            },
+          },
+        ],
       },
 
       {
         test: /\.(woff|woff2|ttf|otf|eot)$/,
-        use: [{
-          loader: "file-loader",
-          options: {
-            outputPath: 'fonts',
-            //name: '[path][name].[ext]'
-          }
-        }]
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'fonts',
+              //name: '[path][name].[ext]'
+            },
+          },
+        ],
       },
       {
         test: /\.mp4$/,
@@ -75,45 +79,51 @@ module.exports = {
       {
         test: /\.(html)$/,
         exclude: /(partials)/,
-        use: [{
-          loader: 'html-loader',
-          options: {
-            //minimize: true
+        use: [
+          {
+            loader: 'html-loader',
+            options: {
+              //minimize: true
+            },
           },
-        }],
+        ],
       },
-    ]
+    ],
   },
 
   plugins: [
-
     new HtmlWebpackPartialsPlugin({
       path: path.join(__dirname, 'src/partials/home/navigation.html'),
-      template_filename: ['index.html']
+      template_filename: ['index.html'],
     }),
 
     new HtmlWebpackPartialsPlugin({
       path: path.join(__dirname, 'src/partials/home/banner.html'),
-      template_filename: ['index.html']
+      template_filename: ['index.html'],
     }),
 
     new HtmlWebpackPartialsPlugin({
       path: path.join(__dirname, 'src/partials/home/news.html'),
-      template_filename: ['index.html']
+      template_filename: ['index.html'],
+    }),
+
+    new HtmlWebpackPartialsPlugin({
+      path: path.join(__dirname, 'src/partials/home/faculties.html'),
+      template_filename: ['index.html'],
     }),
 
     new HtmlWebpackPartialsPlugin({
       path: path.join(__dirname, 'src/partials/home/events.html'),
-      template_filename: ['index.html']
+      template_filename: ['index.html'],
     }),
 
     new MiniCssExtractPlugin({
-      filename: "bundle.css"
+      filename: 'bundle.css',
     }),
 
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src/index.html')
+      template: path.resolve(__dirname, 'src/index.html'),
     }),
     new CleanWebpackPlugin(),
-  ]
+  ],
 };
