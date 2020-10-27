@@ -29,6 +29,7 @@ header {
       &:hover,
       &.active {
         background-color: rgb(122, 2, 52);
+        //background: linear-gradient(to top, #7a0234, #d60672 80%);
         color: #fff;
         animation-delay: 0.5s;
       }
@@ -41,6 +42,7 @@ header {
     height: 50px;
     border-radius: 50%;
     background-color: rgb(122, 2, 52);
+    background: linear-gradient(to top, #7a0234, #d60672);
     border: #fff solid 3px;
     transition: all 1s ease-in;
 

@@ -113,6 +113,11 @@ module.exports = {
     }),
 
     new HtmlWebpackPartialsPlugin({
+      path: path.join(__dirname, 'src/partials/home/counter.html'),
+      template_filename: ['index.html'],
+    }),
+
+    new HtmlWebpackPartialsPlugin({
       path: path.join(__dirname, 'src/partials/home/events.html'),
       template_filename: ['index.html'],
     }),
