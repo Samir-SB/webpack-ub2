@@ -118,7 +118,17 @@ module.exports = {
     }),
 
     new HtmlWebpackPartialsPlugin({
+      path: path.join(__dirname, 'src/partials/home/current-event.html'),
+      template_filename: ['index.html'],
+    }),
+
+    new HtmlWebpackPartialsPlugin({
       path: path.join(__dirname, 'src/partials/home/events.html'),
+      template_filename: ['index.html'],
+    }),
+
+    new HtmlWebpackPartialsPlugin({
+      path: path.join(__dirname, 'src/partials/home/vr.html'),
       template_filename: ['index.html'],
     }),
 
