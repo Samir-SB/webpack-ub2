@@ -24,10 +24,10 @@ const swiper = new Swiper('.swiper-container', {
     el: '.swiper-pagination',
     clickable: true,
   },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+  // navigation: {
+  //   nextEl: '.swiper-button-next',
+  //   prevEl: '.swiper-button-prev',
+  // },
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
