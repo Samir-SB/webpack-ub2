@@ -1,153 +1,122 @@
-#cards {
-  .container {
-    max-width: 70%;
-  }
-  .block-title {
-    font-size: 2.5rem;
-    color: #827f7f;
-    text-align: center;
-    line-height: 1.5;
-    margin-bottom: 30px;
-  }
+@import '../../../sass/vars';
 
-  /* background-color: var(--light-grey-bg); */
-  background-color: #ebecf0;
-  color: var(--light-gray-color);
-
-  .row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+#news {
+  background-color: $bc1;
 
   .card {
-    width: 360px;
-
-    //background-color: #fff;
-    position: relative;
-    overflow: hidden;
-    margin: 1rem;
+    border-style: none;
+    margin: auto;
     transition: all 0.3s ease-in-out;
-  }
 
-  .card:hover {
-    box-shadow: 0px 0px 10px 2px rgb(210 211 216);
-    transform: translateY(-15px);
-  }
 
-  .image-fluid {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
+    &-body {
+      height: 270px;
+      background-color: $bc1;
 
-  .card-content {
-    padding: 5px 1rem;
-    color: black;
-    font-size: 1.2rem;
-    height: 270px;
-  }
+    }
 
-  .card-title {
-    font-weight: 400;
-    color: darksalmon;
-    color: #a00a33;
-    text-transform: uppercase;
-    letter-spacing: 1.5xp;
-    margin-block-end: -1rem;
-  }
+    &-title {
+      font-size: 1.6rem;
+      color: $primary-light;
+      text-transform: uppercase;
+      //letter-spacing: 1px;
+    }
 
-  .card .date-wrapper {
-    overflow: hidden;
-    display: flex;
-    margin-top: 10px;
-    align-items: center;
-  }
 
-  .card span.date {
-    font-size: small;
-    font-weight: bold;
-    border-radius: 16px;
-    color: #d1d4dd;
-    margin-left: 3px;
-  }
+    .date {
+      font-size: small;
+      font-weight: bold;
+      color: #bcbdbe;
+    }
 
-  i.icon {
-    display: inline-block;
-    width: 1rem;
-    color: #d1d4dd;
-  }
+    &-link {
+      position: absolute;
+      bottom: 2rem;
+      font-size: 2rem;
+      text-transform: uppercase;
+      font-size: small;
+      letter-spacing: 1px;
+      font-weight: bold;
+      color: $primary-dark;
 
-  .card p {
-    margin-bottom: 30px;
-  }
+      &::after {
+        content: ' -->';
+      }
+    }
 
-  .read-more {
-    position: absolute;
-    bottom: 2rem;
-    color: #fff;
-    // #7a0234;
-    // color: #7a0234;
-    color: darken($color: #a00a33, $amount: 10%);
-    text-transform: uppercase;
-    font-size: small;
-    letter-spacing: 1px;
-    font-weight: bold;
-
-    &::after {
-      content: ' -->';
+    &:hover,
+    &.active {
+      box-shadow: 0px 0px 10px 2px rgb(210 211 216);
+      transform: translateY(-15px);
     }
   }
 
-  a.btn {
-    text-decoration: none;
-    background-color: darksalmon;
-    color: #fff;
-    padding: 5px 15px;
-  }
-
-  .btn-rounded {
-    border-radius: 16px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  #cards {
-    background-color: red;
-  }
-}
-
-@media screen and (max-width: 414px) {
-  #card-with-image .card {
-    background: none;
+  .swiper-container {
+    z-index: 1;
     overflow: hidden;
+    position: relative;
+    height: 100%;
+
+    .swiper-wrapper {
+      display: flex;
+      padding-bottom: 3rem;
+      //flex-wrap: nowrap;
+
+      .swiper-slide {
+        height: 100%;
+        width: 50% !important;
+
+        padding: 0rem .5rem;
+        padding-top: 1rem;
+      }
+    }
+
+    .swiper-pagination {
+      z-index: 11;
+      position: absolute;
+      bottom: 1.5rem;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
-  .card .image-wrapper {
-    height: fit-content;
+  .swiper-pagination-bullet {
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%;
+    margin-left: 5px;
+    color: #000;
+    background: rgba(0, 0, 0, 0.2);
   }
 
-  .card-title-wrapper {
-    line-height: 1rem;
-  }
-
-  .card-title {
+  .swiper-pagination-bullet-active {
     color: #fff;
-    padding-bottom: 20px;
-  }
-
-  .card-content {
-    background-image: linear-gradient(#74767b61, #092a3c);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .card-content p,
-  a.read-more,
-  .date,
-  i.icon {
-    display: none;
+    background: $primary-light;
   }
 }
+
+
+
+// extra small
+@media screen and (max-width: 575px) {}
+
+// Small
+@media screen and (min-width: 576px) {
+  #news {
+    .card {
+      //min-width: 360px;
+    }
+  }
+}
+
+// Medium
+@media screen and (min-width: 768px) {}
+
+// large
+@media screen and (min-width: 991px) {}
+
+// Extra larg
+@media screen and (min-width: 1200px) {}
