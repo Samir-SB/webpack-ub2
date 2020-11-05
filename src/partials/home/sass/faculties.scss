@@ -2,53 +2,29 @@
   position: relative;
   background-color: #fff;
 
-  //background: darken($color: rgb(63, 81, 181), $amount: 30%);
-  padding: 60px 0;
-  // background-image: url(../images/University-of-St-Andrews.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  .section-title {
-    text-align: center;
-    color: rgb(56, 55, 55);
-    font-size: 30px;
-    //color: #fff;
-  }
-
-  .container {
-    margin-top: 4rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    //justify-content: space-between;
-  }
-
   .service-box {
-    width: calc(25% - 2rem);
-    height: 200px;
+    height: 225px;
     padding: 3rem 1rem;
-    margin: 3rem 1rem;
     text-align: center;
+    margin: 3rem 0rem;
     color: rgb(56, 55, 55);
     cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    justify-content: center;
     box-shadow: 0 0 10px #ebecf0;
     box-shadow: 0 0 10px #e0e1e6;
-    //background: #34566d;
   }
 
   .service-icon {
+    position: absolute;
     width: 80px;
     height: 80px;
-    margin-top: -90px;
+    top: 0;
     border-radius: 50%;
     background: #ff0084;
     background: linear-gradient(to right top, #7a0234, #ff0084);
-
-    margin-bottom: 30px;
     font-size: 2rem;
     display: flex;
     justify-content: center;
@@ -56,30 +32,7 @@
     svg {
       color: #fff;
     }
-
-    // &::before {
-    //   content: '';
-    //   position: absolute;
-    //   top: 50%;
-    //   left: 50%;
-    //   z-index: -10;
-    //   transform: translate(-50%, -50%) rotate(240deg);
-    //   transition: transform 0.3s;
-    //   border-bottom-left-radius: 68% 52.5%;
-    //   border-bottom-right-radius: 32% 47.5%;
-    //   border-top-left-radius: 63.5% 47.5%;
-    //   border-top-right-radius: 36.5% 52.5%;
-    //   width: 100%;
-    //   height: 100%;
-    //   background-color: #f7f7ff;
-    // }
   }
-
-  // .service-icon i {
-  //   line-height: 70px;
-  //   transform: rotate(-45deg);
-  //   font-size: 26px;
-  // }
 
   .service-box:hover .service-icon {
     background-color: #7a0234;
@@ -97,23 +50,5 @@
     .description {
       font-size: 14px;
     }
-  }
-}
-
-@media screen and (max-width: 960px) {
-  .service-box {
-    max-width: 45%;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .service-box {
-    max-width: 50%;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .service-box {
-    max-width: 100%;
   }
 }
