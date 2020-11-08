@@ -1,9 +1,7 @@
 @import './vars';
 @import '~bootstrap/scss/bootstrap';
 
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
-
 
 @font-face {
   font-family: OpenSans;
@@ -68,6 +66,7 @@ section {
 
   .block-title {
     text-align: center;
+    margin-bottom: 2rem;
   }
 }
 
