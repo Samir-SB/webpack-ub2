@@ -7,11 +7,10 @@ import './sass/counter.scss';
 import './sass/current-event.scss';
 import './sass/vr.scss';
 
-
 import './js/news';
 import './js/events';
 import './js/counter';
-import './js/current-event';
+//import './js/current-event';
 
 require('html-loader!./navigation.html');
 require('html-loader!./banner.html');
